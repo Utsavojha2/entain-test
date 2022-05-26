@@ -15,7 +15,7 @@
       "skipLibCheck": true,
       "forceConsistentCasingInFileNames": true,
       "resolveJsonModule": true,
-      "baseUrl": ".",
+      "baseUrl": "src",
     },
     "include": ["src/**/*"],
 }
