@@ -1,0 +1,18 @@
+.customModal {
+  position: fixed;
+  inset: 0px;
+  background-color: $overlay-color;
+  z-index: 10;
+  display: grid;
+  place-items: center;
+
+  &__content {
+    background-color: $light-color;
+    padding: 10px 20px;
+    border-radius: 10px;
+  }
+}
+
+.hiddenModal {
+    display: none;
+}

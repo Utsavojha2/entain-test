@@ -5,9 +5,10 @@
         "jest/globals": true
     },
     "extends": [
+        "plugin:@typescript-eslint/recommended",
         "plugin:react/recommended",
         "plugin:jest/recommended",
-        "plugin:import/typescript",
+        "eslint:recommended",
         "airbnb",
         "prettier"
     ],
@@ -26,6 +27,15 @@
     "rules": {
         "react/jsx-filename-extension": [1, { "extensions": [".ts", ".tsx"] }],
         "import/no-extraneous-dependencies": [1, {"devDependencies": ["**/*.test.js", "**/*.spec.js"]}],
+        "react/react-in-jsx-scope": 0,
+        "@typescript-eslint/no-unused-vars": ["off"],
+        "react/function-component-definition": [
+            2,
+            {
+              "namedComponents": "arrow-function",
+              "unnamedComponents": "arrow-function"
+            }
+          ],
         "import/extensions": [
             "error",
             "always",

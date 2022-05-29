@@ -1,0 +1,20 @@
+.spinner {
+  height: 100vh;
+  display: grid;
+  place-items: center;
+  
+  &__loading {
+    border: 3px solid $primary-border-color;
+    border-radius: 50%;
+    border-top: 4px solid $dark-color;
+    width: 40px;
+    height: 40px;
+    -webkit-animation: spin 2s linear infinite;
+    animation: spin 2s linear infinite;
+
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+  }
+}

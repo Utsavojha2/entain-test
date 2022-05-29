@@ -1,0 +1,147 @@
+.whiteboardAppSection {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  @include md {
+    align-items: flex-start;
+    column-gap: 100px;
+    margin: 20px 50px;
+  }
+}
+
+.whiteboard {
+  display: grid;
+  place-items: start;
+  padding-bottom: 50px;
+
+  & h1 {
+    text-align: center;
+    margin-top: 10px;
+  }
+
+  &__headerlist {
+    margin-top: 50px;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+
+  &__notes {
+    display: grid;
+    place-items: center;
+    grid-template-columns: 1fr;
+    column-gap: 20px;
+
+    @include lg {
+      place-items: start;
+      grid-template-columns: 1fr 1fr;
+      column-gap: 30px;
+    }
+
+    @include xl {
+      column-gap: 50px;
+    }
+  }
+
+  &__input {
+    position: fixed;
+    bottom: 0;
+    background-color: $tertiary-color;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-top: 1px solid $primary-border-color;
+  }
+
+  &__message {
+    display: flex;
+    align-items: center;
+  }
+}
+
+.messageInput {
+  border-radius: 0px !important;
+  padding-top: 6px !important;
+  padding-bottom: 7px !important;
+  width: 250px !important;
+
+  @include md {
+    width: 400px !important;
+  }
+}
+
+.rectangleBtn {
+    border-radius: 0px !important;
+}
+
+.noteItemWrapper {
+  padding: 10px 12px;
+  width: 350px;
+  border-radius: 8px;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 10px;  
+  margin-bottom: 30px;
+  position: relative;
+  background-color: $tertiary-color;
+}
+
+.noteItem {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  & > div {
+    flex: 1;
+  }
+}
+
+.actionNoteBtn {
+  height: 20px;
+  width: 20px;
+  font-size: 12px !important;
+  padding: 0px !important;
+  border-radius: 50% !important;
+  position: absolute;
+}
+
+.deleteNote {
+  top: -10px;
+  right: -10px;
+}
+
+.editNote {
+  top: -10px;
+  left: -10px;
+  height: 22px;
+  width: 22px;
+}
+
+.draggableNote {
+  cursor: grab;
+  border: 1px solid $dark-color;
+}
+
+.usersList {
+  display: none;
+
+  @include lg {
+    display: block;
+
+    & h2 {
+      margin-bottom: 10px;
+    }
+
+    &__item {
+      display: flex;
+      align-items: center;
+      column-gap: 8px;
+    }
+  }
+}
+
+.onlineStatus {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: green;
+}

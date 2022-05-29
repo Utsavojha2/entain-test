@@ -1,0 +1,42 @@
+.h1{
+  font-size: 1.75rem;
+  line-height: 110%;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  @include md {
+    font-size: 2rem;
+  }
+  @include lg{
+    font-size: 2.25rem;
+  }
+}
+
+.h2{
+  font-size: 1.05rem;
+  line-height: 110%;
+  font-weight: 700;
+  letter-spacing: -0.005em;
+  @include md {
+    font-size: 1.15rem;
+  }
+  @include lg{
+    font-size: 1.275em;
+  }
+}
+
+.p1{
+  font-size: 1rem;
+  line-height: 130%;
+  @include lg {
+    font-size: 1.0625rem;
+  }
+}
+
+.p2 {
+  font-size: 0.625rem;
+  line-height: 130%;
+  font-weight: 400;
+  @include lg {
+    font-size: 0.8125rem;
+  }
+}
