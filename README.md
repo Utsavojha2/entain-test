@@ -1,6 +1,6 @@
 ## Backend Repo
-The API repository required for this frontend application to run is available [here](https://github.com/Utsavojha2/entain-test-api). Please start the dev server on backend before running frontend.
 
+The API repository required for this frontend application to run is available [here](https://github.com/Utsavojha2/entain-test-api). Please start the dev server on backend before running frontend.
 
 ## Application Tools
 
@@ -34,5 +34,6 @@ To run cypress tests, follow the set of commands:
 
 ```bash
 npm install
+npm start
 npx cypress open
 ```
