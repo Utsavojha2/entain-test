@@ -93,6 +93,13 @@
   & > div {
     flex: 1;
   }
+
+  &__text {
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    max-width: 280px;
+  }
 }
 
 .actionNoteBtn {

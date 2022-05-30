@@ -4,6 +4,7 @@ import axios from 'axios';
 import UserWrapper from 'components/UserWrapper/UserWrapper';
 import LoadingSpinner from 'components/LoadingSpinner/LoadingSpinner';
 import { IUserRequestResponse } from 'types';
+import NotFound from 'features/NotFound/NotFound';
 
 axios.defaults.baseURL = 'http://localhost:3001';
 
@@ -50,7 +51,7 @@ const App = () => {
           />
           <Route index element={<Navigate to='/' replace />} />
         </Route>
-        <Route path='*' element={<Navigate to='/' replace />} />
+        <Route path='*' element={<NotFound />} />
       </Routes>
     </section>
   );

@@ -12,6 +12,7 @@ import InputForm from 'components/InputForm/InputForm';
 import { PrimaryButton, SecondaryBtn } from 'components/Button/Button';
 import useMountEffect from 'hooks/useMountEffect';
 import { getCurrentTime } from 'utils';
+import { useNavigate } from 'react-router-dom';
 
 const socket = (userId: string) =>
   io('http://localhost:3001', {
@@ -25,6 +26,7 @@ const WhiteBoard: FC<IUserRequestResponse> = ({ id: userId, username }) => {
   const dragItem = useRef<number>();
   const dragOverItem = useRef<number>();
   const inputRef = useRef() as MutableRefObject<HTMLInputElement>;
+  const navigate = useNavigate();
 
   const [choosenNote, setChoosenNote] = useState<INoteItemPayload | null>(null);
   const [appNotes, setAppNotes] = useState<Array<INoteItemPayload>>([]);
@@ -60,7 +62,7 @@ const WhiteBoard: FC<IUserRequestResponse> = ({ id: userId, username }) => {
     });
 
     socketClient.on('connect_error', (err) => {
-      alert(err.message);
+      navigate('/', { replace: true });
     });
   });
 
@@ -137,7 +139,7 @@ const WhiteBoard: FC<IUserRequestResponse> = ({ id: userId, username }) => {
               {appNotes.length >= 1 ? (
                 <P2>
                   Only the owner of the note can edit, delete & drag and drop
-                  their item
+                  their item (and all can be seen real time)
                 </P2>
               ) : (
                 <H2>Add a note item</H2>
@@ -190,10 +192,10 @@ const WhiteBoard: FC<IUserRequestResponse> = ({ id: userId, username }) => {
 
                     <div className={styles.noteItem}>
                       <div>
-                        <P1>{note.text}</P1>
+                        <P1 className={styles.noteItem__text}>{note.text}</P1>
                         <H2>By: {note.username}</H2>
                       </div>
-                      <P2>
+                      <P2 className={styles.noteItem__timestamp}>
                         {getCurrentTime(new Date(note.timestamp).toISOString())}
                       </P2>
                     </div>

@@ -16,11 +16,8 @@
   line-height: 110%;
   font-weight: 700;
   letter-spacing: -0.005em;
-  @include md {
-    font-size: 1.15rem;
-  }
   @include lg{
-    font-size: 1.275em;
+    font-size: 1.0125rem;
   }
 }
 

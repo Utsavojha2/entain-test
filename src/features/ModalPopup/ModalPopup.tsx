@@ -1,5 +1,6 @@
 import { FC, useState, useRef, MutableRefObject, useEffect } from 'react';
 import Modal from 'components/Modal/Modal';
+
 import H1, { P1 } from 'components/Typography/Typography';
 import InputForm from 'components/InputForm/InputForm';
 import { PrimaryButton, SecondaryBtn } from 'components/Button/Button';
@@ -33,7 +34,7 @@ const ModalPopup: FC<ModalPopupProps> = ({ postUsername }) => {
   };
 
   useEffect(() => {
-    inputRef.current.focus();
+    // inputRef.current.focus();
   }, []);
 
   return (

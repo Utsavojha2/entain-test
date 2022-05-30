@@ -1,5 +1,5 @@
 import ModalPopup from 'features/ModalPopup/ModalPopup';
-import { render, screen, act } from '../../config/test-utils';
+import { render, screen, act } from 'config/test-utils';
 import userEvent from '@testing-library/user-event';
 
 const postUsername = jest.fn();
@@ -28,12 +28,14 @@ describe('Testing ModalPopup component', () => {
 
   it('Submitting username for API request call to have been made', async () => {
     render(<ModalPopup postUsername={postUsername} />);
-    await userEvent.type(screen.getByRole('textbox'), 'Utsav');
+    const randomUsername = 'John Doe';
+    await userEvent.type(screen.getByRole('textbox'), randomUsername);
     await userEvent.click(
       screen.getByRole('button', {
         name: /submit/i,
       })
     );
     expect(postUsername).toHaveBeenCalledTimes(1);
+    expect(postUsername).toHaveBeenNthCalledWith(1, randomUsername);
   });
 });
