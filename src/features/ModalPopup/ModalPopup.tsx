@@ -60,6 +60,7 @@ const ModalPopup: FC<ModalPopupProps> = ({ postUsername }) => {
             disabled={isSubmitting || !userName}
             title={!userName ? 'Enter username to proceed' : ''}
             onClick={onUsernameSubmit}
+            id="submit-btn"
           >
             {isSubmitting ? 'Submitting...' : 'Submit'}
           </PrimaryButton>

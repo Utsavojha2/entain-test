@@ -132,7 +132,7 @@ const WhiteBoard: FC<IUserRequestResponse> = ({ id: userId, username }) => {
   return (
     <>
       <div className={styles.whiteboardAppSection}>
-        <section className={styles.whiteboard}>
+        <section className={styles.whiteboard} id="chat-section">
           <div className={styles.whiteboard__header}>
             <H1>WhiteBoard</H1>
             <div className={styles.whiteboard__headerlist}>
